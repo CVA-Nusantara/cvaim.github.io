@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMI Information Management Platform for CVA</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1rem 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        /* Main Navigation Styles */
+        .main-nav {
+            background: #011E41;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-nav nav {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+        }
+
+        .nav-logo {
+            margin-right: 2rem;
+            background: #ffffff;
+            padding: 1px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-logo img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            vertical-align: middle;
+        }
+
+        /* Content Section */
+        .content-section {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .content-section h2 {
+            text-align: center;
+            color: #d2232a;
+        }
+
+        .feature-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .tech-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+            background: #f8f8f8;
+            border-radius: 8px;
+            min-width: 150px;
+            text-align: center;
+        }
+
+        .track-record {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .track-box {
+            background: #ffffff;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .collaboration-section {
+            background: #f8f8f8;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 0.9rem;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+
+        .hero {
+            background: url('img/cbi-bg.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin: 0.5rem 0 0;
+            color: #F5333F;
+	    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5),
+                 -1px -1px 3px rgba(255, 255, 255, 0.5);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #d2232a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            background-color: #b51f24;
+        }
+
+        .main-nav nav {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .menu-items {
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <h2>PMI Information Management Platform for CVA</h2>
+            <p>Streamlining Cash and Voucher Assistance Programs for Effective Humanitarian Response</p>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <div class="main-nav">
+        <nav>
+            <div class="nav-logo">
+                <img src="img/pmi.png" alt="PMI Logo">
+            </div>
+            <div class="menu-items">
+                <a href="#features" style="color: white; text-decoration: none;">Features</a>
+                <a href="#technology" style="color: white; text-decoration: none;">Technology</a>
+                <a href="#track-record" style="color: white; text-decoration: none;">Track Record</a>
+                <a href="#contact" style="color: white; text-decoration: none;">Contact</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Features Section -->
+    <div class="content-section" id="features">
+        <h2>Key Features</h2>
+        <div class="feature-cards">
+            <div class="feature-card">
+                <h3>Beneficiary Data Management</h3>
+                <ul>
+                    <li>Centralized database</li>
+                    <li>Secure storage and retrieval</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <h3>Beneficiary Card Templating</h3>
+                <ul>
+                    <li>Customizable templates</li>
+                    <li>QR code integration</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <h3>Real-time Monitoring</h3>
+                <ul>
+                    <li>Registration tracking</li>
+                    <li>Distribution monitoring</li>
+                    <li>Redemption monitoring</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Technology Section -->
+    <div class="content-section" id="technology">
+        <h2>Technology Stack</h2>
+        <div class="tech-stack">
+            <div class="tech-item">
+                <h3>Database</h3>
+                <p>MariaDB</p>
+            </div>
+            <div class="tech-item">
+                <h3>Backend</h3>
+                <p>PHP</p>
+            </div>
+            <div class="tech-item">
+                <h3>Frontend</h3>
+                <p>JavaScript</p>
+            </div>
+            <div class="tech-item">
+                <h3>Platform</h3>
+                <p>Progressive Web App</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Track Record Section -->
+    <div class="content-section" id="track-record">
+        <h2>Proven Track Record</h2>
+        <div class="track-record">
+            <div class="track-box">
+                <h3>2017: Pidie Jaya Earthquake</h3>
+                <p>2,000 beneficiaries</p>
+                <p>Shelter Kit Assistance</p>
+            </div>
+            <div class="track-box">
+                <h3>2018-2019: Lombok Earthquake</h3>
+                <p>4,000 beneficiaries</p>
+                <p>Shelter, WASH & School Assistance</p>
+            </div>
+            <div class="track-box">
+                <h3>2020-2021: Central Sulawesi Tsunami</h3>
+                <p>10,009 beneficiaries</p>
+                <p>Shelter and Livelihood Assistance</p>
+            </div>
+            <div class="track-box">
+                <h3>2021: West Sulawesi Earthquake</h3>
+                <p>2,000 beneficiaries</p>
+                <p>Shelter and WASH Assistance</p>
+            </div>
+            <div class="track-box">
+                <h3>2022: COVID-19 Response</h3>
+                <p>3,000 beneficiaries</p>
+                <p>Socio-economic Impact Assistance</p>
+            </div>
+            <div class="track-box">
+                <h3>2025: Malaysia Flood Response</h3>
+                <p>3,000 beneficiaries</p>
+                <p>NS Peer-to-peer support and knowledge transfer</p>
+            </div>
+        </div>
+
+        <!-- Collaboration Section -->
+        <div class="collaboration-section">
+            <h2>International Collaboration</h2>
+            <p>Pioneering Peer-to-Peer Support Between PMI and Malaysian Red Crescent</p>
+            <p>In 2025, PMI's CVA platform was successfully adopted by the Malaysian Red Crescent for their flood response operations.</p>
+            <p><a href="https://cva.redcrescent.org.my" target="_blank">Visit Malaysian Red Crescent's CVA Platform</a></p>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="content-section" id="contact">
+        <h2>Get in Touch</h2>
+        <p>For more information or to request a demo, please contact:</p>
+        <p><strong>Parmin</strong><br>
+        Email: <a href="mailto:parmin@pmi.or.id">parmin@pmi.or.id</a></p>
+        <a href="https://cbi.pmi.or.id" class="cta-button">Visit Platform</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Contact <a href="mailto:parmin@pmi.or.id">parmin@pmi.or.id</a></p>
+        <p>© 2025 Indonesian Red Cross (PMI) - Empowering Humanitarian Response Through Technology</p>
+    </footer>
+</body>
+</html>
